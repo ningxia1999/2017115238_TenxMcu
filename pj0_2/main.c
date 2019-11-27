@@ -2,7 +2,7 @@ void main() {
   SysInit();
   VarsInit();
   F_ledOn();
-  delayMs(500);
+  DelayMs(500);
   //使能看门狗
   F_turnOnWDT();
 
@@ -13,7 +13,7 @@ void main() {
     // delayMs(500);
     // F_ledOn();
     // delayMs(500);
-       delayMs(20);
+  
     GetKeys();
     if (D_keyValue1 == keyValue) {
       F_ledNeg();
@@ -22,8 +22,8 @@ void main() {
   }
 }
 //=============================================================================
-@@ -19,6 +27,7 @@ void delayMs(uint16_t msCount) {
-    uint16_t i, j;
+void DelayMs(uint16_t msCount) {
+        uint16_t i, j;
   for (i = 0; i < msCount; i++) {
     for (j = 0; j < 1000; j++) {
       /* code */
