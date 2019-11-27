@@ -3,7 +3,7 @@
 //=============================================================================
 void SysInit() {
   //时钟初始化
-  CLKCON = 0x02; // Clock div 2
+  CLKCON = 0x03; // Clock div 1
   STPPCK = 0;
   STPFCK = 0;
   _nop_();
@@ -22,7 +22,7 @@ void SysInit() {
   _nop_();
   _nop_();
   _nop_();
-}
+
 // IO 模式初始化
 P1MODL = 0xaa;
 
