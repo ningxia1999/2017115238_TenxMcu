@@ -27,7 +27,8 @@ void TimeProcess() {
     second++;
   }
   if (timer5ms >= D_5ms) {
-
+    // 5ms 执行一次
+    timer5ms = 0;
     GetKeys();
      }
   if (second >= D_1000ms) {
@@ -36,12 +37,20 @@ void TimeProcess() {
    }
 }
 //=============================================================================
-void DelayMs(uint16_t msCount) {
-        uint16_t i, j;
-  for (i = 0; i < msCount; i++) {
-    for (j = 0; j < 1000; j++) {
-      /* code */
-        F_clearWDT();
-    }
+void TaskProcess() {}
+//=============================================================================
+void TaskSetting() {
+  if (D_keyValue1 == keyValue) {
+   bLedFlash = ~bLedFlash;
   }
+  keyValue = D_keyNull;
 }
+//=============================================================================
+void DisplayProcess() {
+  // F_ledOn();
+   if (bLedFlash) {
+    F_ledOn();
+  } else {
+    F_ledOff();
+  }
+} 
