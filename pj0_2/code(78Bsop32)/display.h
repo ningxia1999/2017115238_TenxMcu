@@ -5,6 +5,7 @@
 // Const: exp: #define D_data 1 ----------------
 #define D_ledOn 1  //高电位亮
 #define D_ledOff 0 //低点位灭
+#define F_ledNeg() P_led = ~P_led
 // Globle Var -----------------------------------------
 #ifdef __display_c
 
